@@ -4,13 +4,6 @@
 
 공식 문서 기준 API 서버는 `https://openapi.tossinvest.com`이며, 모든 API는 OAuth 2.0 Client Credentials Grant로 발급받은 access token을 사용합니다. 계좌, 자산, 주문 관련 API는 `X-Tossinvest-Account` 헤더가 추가로 필요합니다.
 
-## 설치 및 빌드
-
-```bash
-npm install
-npm run build
-npm test
-```
 
 ## 환경 변수
 
@@ -24,98 +17,7 @@ TOSS_ACCOUNT_SEQ=1
 
 ## 클라이언트 설정
 
-API 키를 발급받은 후 사용하는 클라이언트 설정 파일에 아래를 추가하세요.
-
-### Claude Code
-
-`.claude/settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "toss-securities": {
-      "command": "node",
-      "args": ["/Users/jh/Desktop/devs/26-1/toss-st/dist/index.js"],
-      "env": {
-        "TOSS_CLIENT_ID": "발급받은_ID",
-        "TOSS_CLIENT_SECRET": "발급받은_SECRET",
-        "TOSS_ACCOUNT_SEQ": "1"
-      }
-    }
-  }
-}
-```
-
-### Claude Desktop
-
-`~/Library/Application Support/Claude/claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "toss-securities": {
-      "command": "node",
-      "args": ["/Users/jh/Desktop/devs/26-1/toss-st/dist/index.js"],
-      "env": {
-        "TOSS_CLIENT_ID": "발급받은_ID",
-        "TOSS_CLIENT_SECRET": "발급받은_SECRET",
-        "TOSS_ACCOUNT_SEQ": "1"
-      }
-    }
-  }
-}
-```
-
-### Cursor
-
-`~/.cursor/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "toss-securities": {
-      "command": "node",
-      "args": ["/Users/jh/Desktop/devs/26-1/toss-st/dist/index.js"],
-      "env": {
-        "TOSS_CLIENT_ID": "발급받은_ID",
-        "TOSS_CLIENT_SECRET": "발급받은_SECRET",
-        "TOSS_ACCOUNT_SEQ": "1"
-      }
-    }
-  }
-}
-```
-
-### GPT Codex CLI
-
-`~/.codex/config.toml`:
-
-```toml
-[mcp_servers.toss-securities]
-command = "node"
-args    = ["/Users/jh/Desktop/devs/26-1/toss-st/dist/index.js"]
-
-[mcp_servers.toss-securities.env]
-TOSS_CLIENT_ID     = "발급받은_ID"
-TOSS_CLIENT_SECRET = "발급받은_SECRET"
-TOSS_ACCOUNT_SEQ   = "1"
-```
-
-## npm 배포 후
-
-`command`/`args`를 아래로 교체하면 별도 로컬 빌드 없이 사용할 수 있습니다.
-
-```json
-"command": "npx",
-"args": ["-y", "toss-st-mcp"]
-```
-
-Codex는:
-
-```toml
-command = "npx"
-args    = ["-y", "toss-st-mcp"]
-```
+API 키를 발급받은 후 사용하는 에이전트에 설정을 해주세요.
 
 ## 지원 기능
 

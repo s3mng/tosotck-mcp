@@ -86,26 +86,6 @@ API 키를 발급받은 후 사용하는 클라이언트 설정 파일에 아래
 }
 ```
 
-### Windsurf
-
-`~/.codeium/windsurf/mcp_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "toss-securities": {
-      "command": "node",
-      "args": ["/Users/jh/Desktop/devs/26-1/toss-st/dist/index.js"],
-      "env": {
-        "TOSS_CLIENT_ID": "발급받은_ID",
-        "TOSS_CLIENT_SECRET": "발급받은_SECRET",
-        "TOSS_ACCOUNT_SEQ": "1"
-      }
-    }
-  }
-}
-```
-
 ### GPT Codex CLI
 
 `~/.codex/config.toml`:

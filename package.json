@@ -1,0 +1,28 @@
+{
+  "name": "toss-st-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Toss Securities Open API",
+  "type": "module",
+  "bin": {
+    "toss-st-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "dev": "node --watch dist/index.js",
+    "test": "npm run build && node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  }
+}

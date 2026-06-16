@@ -1,0 +1,22 @@
+# GPT Codex CLI MCP 설정 예시
+# 아래 내용을 ~/.codex/config.toml 에 추가하세요.
+#
+# 개발 중 (로컬 빌드):
+[mcp_servers.toss-securities]
+command = "node"
+args    = ["/Users/jh/Desktop/devs/26-1/toss-st/dist/index.js"]
+
+[mcp_servers.toss-securities.env]
+TOSS_CLIENT_ID     = "발급받은_ID"
+TOSS_CLIENT_SECRET = "발급받은_SECRET"
+TOSS_ACCOUNT_SEQ   = "1"
+
+# ── npm 배포 후에는 아래로 교체 ──────────────────────────────────────────────
+# [mcp_servers.toss-securities]
+# command = "npx"
+# args    = ["-y", "toss-st-mcp"]
+#
+# [mcp_servers.toss-securities.env]
+# TOSS_CLIENT_ID     = "발급받은_ID"
+# TOSS_CLIENT_SECRET = "발급받은_SECRET"
+# TOSS_ACCOUNT_SEQ   = "1"

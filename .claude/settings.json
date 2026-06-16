@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "toss-securities": {
+      "command": "node",
+      "args": ["/Users/jh/Desktop/devs/26-1/toss-st/dist/index.js"],
+      "env": {
+        "TOSS_CLIENT_ID": "",
+        "TOSS_CLIENT_SECRET": "",
+        "TOSS_ACCOUNT_SEQ": ""
+      }
+    }
+  }
+}
